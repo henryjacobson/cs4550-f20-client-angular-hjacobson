@@ -1,1 +1,9 @@
-<p>module-list works!</p>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let module of modules"
+      [ngClass]="{'active': module._id === moduleId}">
+    <a routerLink="/normal/courses/{{courseId}}/modules/{{module._id}}/lessons"
+       [ngClass]="{'text-white': module._id === moduleId}">
+      {{module.title}}
+    </a>
+  </li>
+</ul>

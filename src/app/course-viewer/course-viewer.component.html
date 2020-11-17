@@ -1,1 +1,21 @@
-<p>course-viewer works!</p>
+<div class="container">
+  <div class="row">
+    <h1>
+      <a routerLink="/table/courses">
+        X
+      </a>
+
+      {{course.title}}
+    </h1>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <app-module-list></app-module-list>
+    </div>
+    <div class="col-8">
+      <app-lesson-tabs></app-lesson-tabs>
+    </div>
+  </div>
+</div>
+
+

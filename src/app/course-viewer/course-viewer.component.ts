@@ -8,7 +8,7 @@ import {CourseServiceClientService} from '../services/course-service-client.serv
   styleUrls: ['./course-viewer.component.css']
 })
 export class CourseViewerComponent implements OnInit {
-  course: any;
+  course: any = {title: ''};
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -16,9 +16,12 @@ export class CourseViewerComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.courseService.findCourseById(
-      this.activatedRoute.params.subscribe(
-        params => params.courseId))
-      .then(course => this.course = course);
+    this.activatedRoute.params.subscribe(params => {
+      const courseId = params.courseId;
+      if (typeof courseId !== 'undefined') {
+        this.courseService.findCourseById(courseId)
+          .then(course => this.course = course);
+      }
+    });
   }
 }

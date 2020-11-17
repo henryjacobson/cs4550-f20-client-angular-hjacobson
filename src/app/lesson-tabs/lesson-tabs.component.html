@@ -1,1 +1,9 @@
-<p>lesson-tabs works!</p>
+<ul class="nav nav-tabs">
+  <li class="nav-item" *ngFor="let lesson of lessons">
+    <a class="nav-link"
+       routerLink="/normal/courses/{{courseId}}/modules/{{moduleId}}/lessons/{{lesson._id}}/topics"
+       [ngClass]="{'active': lesson._id === lessonId}">
+      {{lesson.title}}
+    </a>
+  </li>
+</ul>

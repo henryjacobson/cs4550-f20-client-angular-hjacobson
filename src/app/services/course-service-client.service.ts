@@ -11,6 +11,9 @@ export class CourseServiceClientService {
       .then(response => response.json())
 
   findCourseById = (courseId: any) =>
-    fetch(`${this.url}/${courseId}`)
-      .then(response => response.json())
+  {
+    console.log(`${this.url}/${courseId}`);
+    return fetch(`${this.url}/${courseId}`)
+      .then(response => response.json());
+  }
 }
