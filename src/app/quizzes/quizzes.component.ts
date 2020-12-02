@@ -23,6 +23,13 @@ export class QuizzesComponent implements OnInit {
       this.service.findAllQuizzes()
         .then(quizzes => {
           this.quizzes = quizzes;
+          this.quizzes.map((quiz: { _id: any; attempts: any; }) =>
+            fetch(`http://localhost:3000/api/quizzes/${quiz._id}/attempts`)
+              .then(response => response.json())
+              .then(attempts => {
+                quiz.attempts = attempts;
+              })
+          );
         });
   });
   }

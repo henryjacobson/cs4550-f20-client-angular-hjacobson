@@ -9,4 +9,8 @@ export class QuizServiceService {
   findAllQuizzes = () =>
     fetch(`${this.url}/quizzes`)
       .then(response => response.json())
+
+  findQuizById = (quizId: any) =>
+    fetch(`${this.url}/quizzes/${quizId}`)
+      .then(response => response.json())
 }

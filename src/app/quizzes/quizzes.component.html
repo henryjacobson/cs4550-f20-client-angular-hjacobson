@@ -9,6 +9,14 @@
          routerLink="/courses/{{courseId}}/quizzes/{{quiz._id}}">
         Start
       </a>
+
+      <div class="container">
+        <ul class="list-group">
+          <li *ngFor="let attempt of quiz.attempts" class="list-group-item">
+            Score: {{attempt.score}}
+          </li>
+        </ul>
+      </div>
     </li>
   </ul>
 </div>
