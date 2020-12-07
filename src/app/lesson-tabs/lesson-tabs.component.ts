@@ -10,7 +10,6 @@ import {LessonServiceClientService} from '../services/lesson-service-client.serv
 })
 export class LessonTabsComponent implements OnInit {
   lessons: any = [];
-  topics: any = [];
   courseId: any;
   moduleId: any;
   lessonId: any;
